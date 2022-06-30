@@ -1,1 +1,16 @@
-.AlertaSalida {}
+.dialogTitle {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.dialogActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly !important;
+}
+
+.buttonDialog {
+  background-color: #ffd600 !important;
+  color: black !important;
+  font-weight: bold;
+}
