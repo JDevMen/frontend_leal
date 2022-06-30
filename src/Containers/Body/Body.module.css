@@ -1,0 +1,28 @@
+.mainContent {
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.mainContent > ul {
+  padding-block: 1rem;
+}
+.mainContent > ul > li {
+  line-height: 2.5rem;
+}
+
+.mainContent > ul > li::marker {
+  color: #61dafb;
+  font-size: 1.5rem;
+}
+
+.mainContent > h1 {
+  margin: 0;
+}
+.pagination {
+  margin-block: 0.5rem;
+  justify-self: center;
+}

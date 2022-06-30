@@ -1,0 +1,11 @@
+.ProfileComponent {
+  display: flex;
+  align-items: center;
+}
+
+.ProfileButton {
+  margin-inline: 0.5rem !important;
+  background-color: #ffd600 !important;
+  color: black !important;
+  font-weight: bold;
+}

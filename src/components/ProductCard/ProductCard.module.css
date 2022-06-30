@@ -1,0 +1,43 @@
+.ProductCard {
+  display: inline-block;
+  text-align: center;
+}
+
+.body2_container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.body2_card {
+  margin: 0.5rem;
+}
+
+.counter_group {
+  margin: 0.5rem;
+}
+
+.counter_group > button {
+  padding-block: 0;
+  background-color: #ffd600;
+  color: black;
+}
+.counter_group > p {
+  padding-inline: 1rem;
+  margin-block: 0;
+  align-self: center;
+}
+
+.actions_button {
+  background-color: #ffd600 !important;
+  color: black !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  padding: 0.5rem;
+}
