@@ -1,0 +1,29 @@
+.dialogTitle {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.dialogActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly !important;
+}
+
+.dialogContent {
+  padding-block: 0rem;
+}
+
+.buttonDialog {
+  background-color: #ffd600 !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+.ingresarForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formTextField {
+  margin: 0.5rem !important;
+}
