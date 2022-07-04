@@ -12,11 +12,13 @@ import {
 } from "@mui/material";
 import { FC, useState } from "react";
 import styles from "./AlertaIngreso.module.css";
-import { isValidEmail } from "../../Utils/validateEmail";
+import { isValidEmail } from "../../shared/utils/validateEmail";
 
 type Props = {
   open: boolean;
   handleClose: Function;
+  handleIngresarUsuario: Function;
+  handleRegistrarUsuario: Function;
 };
 
 interface State {
@@ -79,6 +81,40 @@ const AlertaIngreso: FC<Props> = (props) => {
     props.handleClose();
   };
 
+  const handleIngresarUsuario = async () => {
+    try {
+      await props.handleIngresarUsuario(values.email, values.password);
+      setValues({
+        email: "",
+        password: "",
+        showPassword: false,
+        isInvalidEmail: false,
+        isEmailDirty: false,
+        isPasswordDirty: false,
+      });
+      props.handleClose();
+    } catch (err) {
+      console.log("mandar aviso", err);
+    }
+  };
+
+  const handleRegistarUsuario = async () => {
+    try {
+      await props.handleRegistrarUsuario(values.email, values.password);
+      setValues({
+        email: "",
+        password: "",
+        showPassword: false,
+        isInvalidEmail: false,
+        isEmailDirty: false,
+        isPasswordDirty: false,
+      });
+      props.handleClose();
+    } catch (err) {
+      console.log("mandar aviso", err);
+    }
+  };
+
   return (
     <Dialog
       open={props.open}
@@ -96,7 +132,7 @@ const AlertaIngreso: FC<Props> = (props) => {
         <form className={styles.ingresarForm}>
           <TextField
             required
-            error={values.isInvalidEmail || values.isEmailDirty}
+            error={values.isInvalidEmail}
             id="filled-basic"
             label="Correo eletrónico"
             variant="filled"
@@ -119,8 +155,12 @@ const AlertaIngreso: FC<Props> = (props) => {
         </form>
       </DialogContent>
       <DialogActions className={styles.dialogActions}>
-        <Button className={styles.buttonDialog}>Ingresar</Button>
-        <Button className={styles.buttonDialog}>Registrarme</Button>
+        <Button className={styles.buttonDialog} onClick={handleIngresarUsuario}>
+          Ingresar
+        </Button>
+        <Button className={styles.buttonDialog} onClick={handleRegistarUsuario}>
+          Registrarme
+        </Button>
       </DialogActions>
     </Dialog>
   );
